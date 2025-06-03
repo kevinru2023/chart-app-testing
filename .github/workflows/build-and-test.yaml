@@ -1,0 +1,36 @@
+name: Build and test
+
+on:
+  workflow_call:
+    inputs:
+          upload-pages-artifact:
+            type: boolean
+            required: false
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    container: # speed up playwright installation
+      image: mcr.microsoft.com/playwright:v1.52.0-noble
+      options: --user 1001
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm run test:vite-tests
+      - run: npm run build
+        env:
+            BASE_PATH: '/${{ github.event.repository.name }}'
+      - run: npm run test:e2e 
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+            name: playwright-report
+            path: playwright-report/
+            retention-days: 30
+      - if: ${{ inputs.upload-pages-artifact }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+           path: build/
