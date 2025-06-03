@@ -1,0 +1,8 @@
+name: Test PRs
+
+on:
+  pull_request
+
+jobs:
+  build-and-test:
+    uses: ./.github/workflows/build-and-test.yaml
