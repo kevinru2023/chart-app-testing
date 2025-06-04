@@ -1,6 +1,6 @@
 <!-- ChartBuilderTestWrapper.svelte -->
 <script>
-  import ChartBuilder from './ChartBuilder.svelte';
+  import ChartBuilder from './chartBuilder.svelte';
 </script>
 
 <ChartBuilder type="bar" />
