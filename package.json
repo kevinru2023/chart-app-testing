@@ -16,7 +16,8 @@
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
     "test:vite-tests": "vitest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:unit": "vitest run tests/unit/unit.test.js"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.5",
