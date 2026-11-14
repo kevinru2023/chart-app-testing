@@ -1,6 +1,12 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/_nScgA8a)
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=19536327)
-# Chart App
+# Chart App: Test Suite (CS 362 team project)
+
+Team project for **CS 362 (Software Engineering II) at Oregon State University**, Spring 2025. Our team ("Los Tres Leches Amigos") was given a SvelteKit charting app and built a full testing pipeline around it: **unit tests (Vitest), integration tests, end-to-end tests (Playwright), and CI with GitHub Actions**. Mirrored here from the course organization with full commit history.
+
+**My contributions (Kevin Rubio):** set up the CI/CD workflow (`.github/workflows/build-and-test.yaml`, `test-on-push.yaml`), project dependencies and test scripts, the Playwright configuration, and fixed the pipeline so E2E tests run against a built preview server in CI.
+
+---
+
+## The app under test
 
 This simple charts creation app allows user to:
 
